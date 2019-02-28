@@ -1,0 +1,64 @@
+<header class="header-global">
+  <nav
+    class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--not-bottom"
+    id="navbar-main">
+    <div _ngcontent-c1="" class="container"><a _ngcontent-c1="" class="navbar-brand mr-lg-5" href="../index.html"><img
+          _ngcontent-c1=""
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Indian_Railway.svg/1024px-Indian_Railway.svg.png">
+        &nbsp; &nbsp; &nbsp; <strong _ngcontent-c1="">Indian Railways - Automated Gate Monitoring System</strong></a>
+    </div>
+  </nav>
+</header>
+<main _ngcontent-c1="">
+  <section _ngcontent-c1="" class="section section-shaped section-lg">
+    <div _ngcontent-c1="" class="shape shape-style-1 bg-gradient-default"><span _ngcontent-c1=""></span><span
+        _ngcontent-c1=""></span><span _ngcontent-c1=""></span></div>
+    <div _ngcontent-c1="" class="container pt-lg-md">
+      <div _ngcontent-c1="" class="row justify-content-center">
+        <div _ngcontent-c1="" class="col-lg-5">
+          <div _ngcontent-c1="" class="card bg-secondary shadow border-0">
+            <div _ngcontent-c1="" class="card-body px-lg-5 py-lg-5">
+              <div _ngcontent-c1="" class="text-center text-muted mb-4">
+                <h3 _ngcontent-c1="">Log In</h3>
+              </div>
+              <form _ngcontent-c1="" [formGroup]="loginForm" role="form">
+                <div _ngcontent-c1="" class="form-group mb-3 focused">
+                  <div _ngcontent-c1="" class="input-group input-group-alternative">
+                    <div _ngcontent-c1="" class="input-group-prepend"><span _ngcontent-c1="" class="input-group-text"><i
+                          _ngcontent-c1="" class="ni ni-mobile-button"></i></span></div><input _ngcontent-c1=""
+                      class="form-control" formControlName="number" placeholder="Phone Number" type="number">
+                  </div>
+                </div>
+                <div _ngcontent-c1="" class="form-group focused">
+                  <div _ngcontent-c1="" class="input-group input-group-alternative">
+                    <div _ngcontent-c1="" class="input-group-prepend"><span _ngcontent-c1="" class="input-group-text"><i
+                          _ngcontent-c1="" class="ni ni-lock-circle-open"></i></span></div>
+                    <input _ngcontent-c1="" formControlName="password" class="form-control" placeholder="Password" type="password">
+                  </div>
+                </div>
+                <div _ngcontent-c1="" class="text-center"><button _ngcontent-c1="" class="btn btn-primary my-4"
+                    type="button" (click)="performLogin()" >Sign in</button></div>
+              </form>
+            </div>
+          </div>
+          <div _ngcontent-c1="" class="row mt-3">
+            <div _ngcontent-c1="" class="col-6"><a _ngcontent-c1="" class="text-light" href="#"><small
+                  _ngcontent-c1="">Forgot password?</small></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer _ngcontent-c1="" class="footer">
+  <div _ngcontent-c1="" class="container">
+    <div _ngcontent-c1="" class="row row-grid align-items-center mb-5">
+      <div _ngcontent-c1="" class="col9 col-lg-9">
+        <h3 _ngcontent-c1="" class="text-primary font-weight-light mb-2">Team Xorticans</h3>
+        <h4 _ngcontent-c1="" class="mb-0 font-weight-light">Smart India Hackathon 2019 - Software Edition</h4>
+      </div>
+      <div _ngcontent-c1="" class="col-3 col-lg-3"><img _ngcontent-c1="" height="60%"
+          src="../../assets/images/SIH_2019_LOGO_final.png" width="60%"></div>
+    </div>
+  </div>
+</footer>
