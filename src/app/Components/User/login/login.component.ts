@@ -13,15 +13,21 @@ import { AuthService } from '../../../Services/auth/auth.service';
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private auth: AuthService) { }
+  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private auth: AuthService, private router: Router) { }
+
+  redirect() {
+    const token: any = JSON.parse(localStorage.getItem('user'))
+    if (token.roles[0].roleId.name === 'gateKeeper') {
+      this.router.navigate(['/gateKeeper/dashboard'])
+    }
+  }
 
   ngOnInit() {
-    if(this.auth.isLoggedIn()){
-      console.log('Hello')
+    if (localStorage.getItem('user')) {
+      this.redirect()
     } else {
-      console.log('hai')
+      this.createForm()
     }
-    this.createForm()
   }
 
   createForm() {
@@ -36,7 +42,9 @@ export class LoginComponent implements OnInit {
       if (response.error === true) {
         this.toastr.error('An Error Occured. Try again', 'Error')
       } else if (response.data.user) {
-        this.toastr.success('Logging you in', 'Successfull')
+        this.toastr.success('Logged in', 'Successfull')
+        this.auth.createSession(response)
+        this.redirect()
       } else {
         this.toastr.error(response.data, 'Cannot Login')
       }
