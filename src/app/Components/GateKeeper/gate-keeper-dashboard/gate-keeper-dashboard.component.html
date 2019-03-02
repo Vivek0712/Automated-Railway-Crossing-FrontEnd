@@ -1,0 +1,55 @@
+<header class="header-global">
+  <nav class="navbar navbar-main bg-dark" id="navbar-main">
+    <div class="container"><a _ngcontent-c1="" class="navbar-brand mr-lg-5" href="../index.html"><img _ngcontent-c1=""
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Indian_Railway.svg/1024px-Indian_Railway.svg.png">
+        &nbsp; &nbsp; &nbsp; <strong _ngcontent-c1="">Indian Railways - Automated Gate Monitoring System</strong></a>
+      <div class="navbar-text">
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+      </div>
+    </div>
+
+  </nav>
+</header>
+<br />
+<div class="container">
+  <div class="text-center">
+    <span style="font-size: 40pt">Gate Keeper - Control Panel - {{gate.gateId}}</span>
+    <hr />
+    <br />
+    <div style="font-size: 50pt">
+      <strong>
+        <span>Gate is Now :
+          <span *ngIf="isGateOpened" class="text-danger">
+            Opened
+          </span>
+          <span *ngIf="!isGateOpened" class="text-success">
+            Closed
+          </span>
+        </span>
+      </strong>
+      <br />
+      <strong>
+        <span [ngClass]="{'blinking': isTrainApproaching}">
+          Train Approaching :
+          <span *ngIf="isTrainApproaching">
+            YES
+          </span>
+          <span *ngIf="!isTrainApproaching">
+            NO
+          </span>
+        </span>
+      </strong>
+    </div>
+    <br />
+    <br />
+    <button style="font-size: 50pt" *ngIf="isGateOpened" (click)="closeGate()" class="btn btn-lg btn-danger">Close
+      Gate</button>
+    <button style="font-size: 50pt" *ngIf="!isGateOpened" (click)="openGate()" class="btn btn-lg btn-success">Open
+      Gate</button>
+  </div>
+  <br />
+  <div id="mapid"></div>
+  <br/>
+  <br/>
+  <br/>
+</div>

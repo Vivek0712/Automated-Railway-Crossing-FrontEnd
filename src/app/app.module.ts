@@ -12,15 +12,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './Services/auth/auth.service';
 import { JwtHelper } from 'angular2-jwt';
-import { DashboardComponent } from './Component/StationMaster/dashboard/dashboard.component';
-import { StationMasterNavBarComponent } from './Component/StationMaster/station-master-nav-bar/station-master-nav-bar.component';
+import { GateKeeperDashboardComponent } from './Components/GateKeeper/gate-keeper-dashboard/gate-keeper-dashboard.component';
+import { GateService } from './Services/gate/gate.service';
+import { CommonModule } from '@angular/common';  
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
-    StationMasterNavBarComponent,
+    GateKeeperDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,13 +29,15 @@ import { StationMasterNavBarComponent } from './Component/StationMaster/station-
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [
     FormsModule,
     FormBuilder,
     AuthService,
-    JwtHelper
+    JwtHelper,
+    GateService
   ],
   bootstrap: [AppComponent]
 })

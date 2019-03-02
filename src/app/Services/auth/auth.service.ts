@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { JwtHelper } from 'angular2-jwt';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -21,18 +20,15 @@ export class AuthService {
   }
 
   createSession(response: any) {
-    localStorage.setItem('user', JSON.stringify(response.user));
+    console.log(JSON.stringify(response.data.user))
+    localStorage.setItem('user', JSON.stringify(response.data.user));
     localStorage.setItem('token', response.token);
   }
 
   isLoggedIn() {
     const token = localStorage.getItem('token');
     if (token) {
-      if (this.jwtHelper.isTokenExpired(token)) {
-        return false;
-      } else {
-        return true;
-      }
+      return true;
     } else {
       return false;
     }
